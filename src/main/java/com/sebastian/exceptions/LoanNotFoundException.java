@@ -1,4 +1,4 @@
-package com.sebastian.model;
+package com.sebastian.exceptions;
 
 public class LoanNotFoundException extends Exception {
     public LoanNotFoundException(String message){

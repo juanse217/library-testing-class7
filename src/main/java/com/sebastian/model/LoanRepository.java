@@ -1,5 +1,7 @@
 package com.sebastian.model;
 
+import com.sebastian.exceptions.LoanNotFoundException;
+
 public interface LoanRepository {
     Loan findById(Integer id) throws LoanNotFoundException;
     Loan findByUser(User user) throws LoanNotFoundException;

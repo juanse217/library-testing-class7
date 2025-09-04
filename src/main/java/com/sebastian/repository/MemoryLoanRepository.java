@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.sebastian.exceptions.LoanNotFoundException;
 import com.sebastian.model.Loan;
-import com.sebastian.model.LoanNotFoundException;
 import com.sebastian.model.LoanRepository;
 import com.sebastian.model.User;
 

@@ -1,7 +1,7 @@
 package com.sebastian.service;
 
+import com.sebastian.exceptions.BookNotFoundException;
 import com.sebastian.model.Book;
-import com.sebastian.model.BookNotFoundException;
 import com.sebastian.model.Loan;
 import com.sebastian.model.User;
 import com.sebastian.repository.MemoryBookRepository;
