@@ -1,7 +1,37 @@
 package com.sebastian.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import com.sebastian.model.Loan;
+import com.sebastian.model.LoanNotFoundException;
 import com.sebastian.model.LoanRepository;
+import com.sebastian.model.User;
 
 public class MemoryLoanRepository implements LoanRepository{
+
+    private List<Loan> loans;
+
+    public MemoryLoanRepository(){
+        loans = new ArrayList<>();
+    }
+    @Override
+    public Loan findById(Integer id) throws LoanNotFoundException{
+        Optional<Loan> loanOption=  loans.stream().filter(x -> x.getId() == id).findFirst();
+
+        return loanOption.orElseThrow(() -> new LoanNotFoundException("Loan not found"));
+    }
+
+    @Override
+    public Loan findByUser(User user) throws LoanNotFoundException{
+       Optional<Loan> loanOption = loans.stream().filter(x -> x.getUser().equals(user)).findFirst();
+       return loanOption.orElseThrow(() -> new LoanNotFoundException("Loan not found for that user"));
+    }
+
+    @Override
+    public void addLoan(Loan loan) {
+       loans.add(loan);
+    }
 
 }

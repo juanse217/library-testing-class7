@@ -1,12 +1,12 @@
 @startuml Library
 class Book{
-    String id
+    Integer id
     String title
     String author
 }
 
 class User{
-    String id
+    Integer id
     String name
 }
 
