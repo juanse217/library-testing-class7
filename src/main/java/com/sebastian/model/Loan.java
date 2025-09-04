@@ -3,16 +3,16 @@ package com.sebastian.model;
 import java.time.LocalDate;
 
 public class Loan {
-    private Integer id; 
+    private Integer id = 1; 
     private User user; 
     private Book book; 
     private LocalDate loanDate;
 
-    public Loan(Integer id, User user, Book book, LocalDate loanDate) {
-        this.id = id;
+    public Loan(User user, Book book) {
+        this.id = id++;
         this.user = user;
         this.book = book;
-        this.loanDate = loanDate;
+        this.loanDate = LocalDate.now();
     }
 
     public Integer getId() {
