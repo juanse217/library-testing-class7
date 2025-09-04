@@ -1,4 +1,4 @@
-package com.sebastian.repository;
+package com.sebastian.repository.memory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.Optional;
 
 import com.sebastian.exceptions.LoanNotFoundException;
 import com.sebastian.model.Loan;
-import com.sebastian.model.LoanRepository;
 import com.sebastian.model.User;
+import com.sebastian.repository.LoanRepository;
 
 public class MemoryLoanRepository implements LoanRepository{
 

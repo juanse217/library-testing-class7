@@ -1,4 +1,4 @@
-package com.sebastian.repository;
+package com.sebastian.repository.memory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import com.sebastian.exceptions.BookNotFoundException;
 import com.sebastian.model.Book;
-import com.sebastian.model.BookRepository;;
+import com.sebastian.repository.BookRepository;;
 
 public class MemoryBookRepository implements BookRepository {
     private List<Book> books;

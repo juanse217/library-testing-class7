@@ -3,8 +3,8 @@ package com.sebastian;
 import com.sebastian.exceptions.BookNotFoundException;
 import com.sebastian.model.Book;
 import com.sebastian.model.User;
-import com.sebastian.repository.MemoryBookRepository;
-import com.sebastian.repository.MemoryLoanRepository;
+import com.sebastian.repository.memory.MemoryBookRepository;
+import com.sebastian.repository.memory.MemoryLoanRepository;
 import com.sebastian.service.LibraryService;
 
 public class Main {
