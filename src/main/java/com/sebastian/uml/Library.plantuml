@@ -1,0 +1,43 @@
+@startuml Library
+class Book{
+    String id
+    String title
+    String author
+}
+
+class User{
+    String id
+    String name
+}
+
+Loan *-- User
+Loan *-- Book
+class Loan{
+    String id
+    User user
+    Book Book
+    Date loanDate
+}
+
+interface BookRepository{
+    findById(): Book
+    save(): void
+}
+
+interface LoanRepository{
+    save(): void
+    findById(): Loan
+    findByUser(): Loan
+}
+MemoryBookRepository <- BookRepository
+MemoryBookRepository *-"0..*"Book
+class MemoryBookRepository{
+    List books
+}
+MemoryLoanRepository *-left- "0..*" Loan
+MemoryLoanRepository <-right- LoanRepository
+class MemoryLoanRepository{
+    List Loans
+}
+
+@enduml 
