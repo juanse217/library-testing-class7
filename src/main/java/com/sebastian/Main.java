@@ -1,6 +1,7 @@
 package com.sebastian;
 
 import com.sebastian.exceptions.BookNotFoundException;
+import com.sebastian.exceptions.LoanNotFoundException;
 import com.sebastian.model.Book;
 import com.sebastian.model.User;
 import com.sebastian.repository.memory.MemoryBookRepository;
@@ -25,8 +26,18 @@ public class Main {
         } catch (BookNotFoundException e) {
             System.out.println("error");
         }
+        User user = new User(4, "Selbastian");
 
-        service.loanBook(new User(4, "Selbastian"), book2);
+        service.loanBook(user, book2);
+        service.loanBook(user, book);
+        service.loanBook(user, book1);
+
+        try {
+            service.getLoanByUser(user).stream().forEach(System.out::println);
+        } catch (LoanNotFoundException e) {
+            System.out.println("error");
+        }
+        
         
     }
 }
