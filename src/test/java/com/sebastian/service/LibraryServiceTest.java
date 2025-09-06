@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import com.sebastian.exceptions.BookNotFoundException;
 import com.sebastian.exceptions.LoanNotFoundException;
@@ -24,6 +25,7 @@ public class LibraryServiceTest {
 
     @BeforeEach
     void start(){
+        MockitoAnnotations.openMocks(this);
         bookRepo = Mockito.mock(MemoryBookRepository.class);
         loanRepo = Mockito.mock(MemoryLoanRepository.class);
         service = new LibraryService(bookRepo, loanRepo);
